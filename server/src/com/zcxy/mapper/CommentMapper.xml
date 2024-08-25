@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    namespace:名称空间，必须使用代理类的全名（包含包名）
+-->
+
+<mapper namespace="com.zcxy.mapper.CommentMapper">
+    <select id="selectByNewId" resultType="com.zcxy.pojo.Comment">
+        select *
+        from comment
+        where comment.new_id == #{new_id} ORDER BY comment.create_time DESC;
+    </select>
+    <select id="selectCountByNewId" resultType="com.zcxy.pojo.Comment">
+        select COUNT(*)
+        from comment
+        where comment.new_id == #{new_id};
+    </select>
+    <select id="selectByAllId" resultType="com.zcxy.pojo.Comment">
+        select *
+        from comment
+        where comment.new_id == #{new_id} AND comment.uid == #{uid};
+    </select>
+    <select id="selectByUid" resultType="com.zcxy.pojo.Comment">
+        select *
+        from comment
+        where comment.uid == #{uid};
+    </select>
+    <select id="selectList" resultType="com.zcxy.pojo.Comment">
+        select *
+        from comment
+        where new_id = #{new_id}
+        ORDER BY create_time DESC
+        limit #{start}, #{limit};
+    </select>
+    <select id="selectById" resultType="com.zcxy.pojo.Comment">
+        select *
+        from comment
+        where comment.id == #{id};
+    </select>
+    <insert id="addComment" useGeneratedKeys="true" keyProperty="id">
+        insert into comment(new_id, uid, context, create_time,niChen)
+        values (#{new_id},#{uid},#{context},#{create_time},#{niChen})
+    </insert>
+    <delete id="deleteByNewIds">
+    delete from comment where id
+    in
+    <foreach collection="ids" item="id" separator="," open="(" close=")">
+        #{id}
+    </foreach>
+    ;
+    </delete>
+</mapper>

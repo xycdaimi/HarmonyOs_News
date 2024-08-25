@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeHandlers>
+        <typeHandler handler="com.zcxy.pojo.UuidTypeHandler" javaType="java.util.UUID"/>
+    </typeHandlers>
+    <!--
+        environments：配置数据库连接环境信息。
+        可以配置多个environment，通过default属性切换不同的environment
+    -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="org.sqlite.JDBC"/>
+                <property name="url" value="jdbc:sqlite:db\app_server.db"/>
+                <property name="username" value=""/>
+                <property name="password" value=""/>
+            </dataSource>
+        </environment>
+
+<!--        <environment id="test">-->
+<!--            <transactionManager type="JDBC"/>-->
+<!--            <dataSource type="POOLED">-->
+<!--                &lt;!&ndash;数据库连接信息&ndash;&gt;-->
+<!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql:///mybatis?useSSL=false"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value="abcd"/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+    </environments>
+    <mappers>
+        <!--SQL映射文件-->
+<!--        <mapper resource="com\zcxy\mapper\UserMapper.xml"/>-->
+        <!--基于Mapper代理编程时，两种指定SQL映射的方法，二选一-->
+        <!--方法1：按路径指定要加载的SQL映射文件-->
+        <!--        <mapper resource="com\zcxy\mapper\StudentMapper.xml"/>-->
+        <!--方法2：使用包扫描的方式，自动加载Mapper接口所在包下，与接口同名的SQL映射文件-->
+        <package name="com.zcxy.mapper"/>
+    </mappers>
+</configuration>

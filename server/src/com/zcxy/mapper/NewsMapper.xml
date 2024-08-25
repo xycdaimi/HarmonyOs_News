@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    namespace:名称空间，必须使用代理类的全名（包含包名）
+-->
+
+<mapper namespace="com.zcxy.mapper.NewsMapper">
+<!--    <select id="selectAll" resultType="com.zcxy.pojo.News">-->
+<!--        &lt;!&ndash;此SQL语句的id：test.selectAll&ndash;&gt;-->
+<!--        select *  from News;-->
+<!--    </select>-->
+    <select id="selectByType" resultType="com.zcxy.pojo.News">
+        select *
+        from News
+        where new_type = #{new_type}
+        and strftime('%Y-%m-%d %H:%M:%S', date_time) >= datetime('now', '-7 days')
+        order by comments desc
+        limit #{start}, #{limit}
+    </select>
+    <select id="selectList" resultType="com.zcxy.pojo.News">
+        select *
+        from News
+        where strftime('%Y-%m-%d %H:%M:%S', date_time) >= datetime('now', '-7 days')
+        order by comments desc
+        limit #{start}, #{limit}
+    </select>
+    <select id="selectByUid" resultType="com.zcxy.pojo.News">
+        select *
+        from News
+        where author = #{uid}
+        order by date_time desc
+        limit #{start}, #{limit}
+    </select>
+    <select id="selectIdMax" resultType="com.zcxy.pojo.News">
+        select *
+        from News
+        order by id desc
+        limit 1
+    </select>
+    <select id="selectByTitle" resultType="com.zcxy.pojo.News">
+        select *
+        from News
+        where title like #{title}
+        limit #{start}, #{limit}
+    </select>
+    <select id="selectById" resultType="com.zcxy.pojo.News">
+        select *
+        from News
+        where id = #{id}
+    </select>
+    <insert id="addNews" useGeneratedKeys="true" keyProperty="id">
+        insert into News (title, content, author, date_time, image, new_type, niChen)
+        values (#{title}, #{content}, #{author}, #{date_time}, #{image}, #{new_type},#{niChen})
+    </insert>
+    <delete id="deleteByIds">
+        delete from News where id
+        in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+        ;
+    </delete>
+    <update id="updateNews" parameterType="com.zcxy.pojo.News">
+        update News set title = #{title}, content = #{content},
+                        author = #{author},
+                        image = #{image}, new_type = #{new_type},
+                        niChen = #{niChen},comments = #{comments} where id = #{id};
+    </update>
+</mapper>

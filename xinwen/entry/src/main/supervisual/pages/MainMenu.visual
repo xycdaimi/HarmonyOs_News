@@ -1,0 +1,254 @@
+{
+    "document": {
+        "VisualVersion": "12",
+        "type": "ETS",
+        "custom": false,
+        "path": "/entry/src/main/supervisual/pages/MainMenu"
+    },
+    "visualModel": {
+        "dataType": "VisualModel",
+        "value": {
+            "propertyStorage": {
+                "dataType": "Map",
+                "value": {}
+            },
+            "dynamicPropertyStorage": {
+                "dataType": "Map",
+                "value": {}
+            },
+            "mediaPropertyStorage": {
+                "dataType": "Map",
+                "value": {}
+            },
+            "dynamicMediaPropertyStorage": {
+                "dataType": "Map",
+                "value": {}
+            },
+            "property": {
+                "dataType": "Map",
+                "value": {
+                    "width": "100%",
+                    "height": "100%"
+                }
+            },
+            "dynamicProperty": {
+                "dataType": "Map",
+                "value": {}
+            },
+            "children": [
+                {
+                    "dataType": "VisualModel",
+                    "value": {
+                        "propertyStorage": {
+                            "dataType": "Map",
+                            "value": {}
+                        },
+                        "dynamicPropertyStorage": {
+                            "dataType": "Map",
+                            "value": {}
+                        },
+                        "mediaPropertyStorage": {
+                            "dataType": "Map",
+                            "value": {}
+                        },
+                        "dynamicMediaPropertyStorage": {
+                            "dataType": "Map",
+                            "value": {}
+                        },
+                        "property": {
+                            "dataType": "Map",
+                            "value": {
+                                "width": "100%",
+                                "height": "100%",
+                                "justify-content-rc": "center"
+                            }
+                        },
+                        "dynamicProperty": {
+                            "dataType": "Map",
+                            "value": {}
+                        },
+                        "children": [
+                            {
+                                "dataType": "VisualModel",
+                                "value": {
+                                    "propertyStorage": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "dynamicPropertyStorage": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "mediaPropertyStorage": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "dynamicMediaPropertyStorage": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "slots": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "property": {
+                                        "dataType": "Map",
+                                        "value": {
+                                            "height": "100%",
+                                            "width": "100%",
+                                            "titleMode": "Free",
+                                            "navigation-title": "首页"
+                                        }
+                                    },
+                                    "dynamicProperty": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "children": [
+                                        {
+                                            "dataType": "VisualModel",
+                                            "value": {
+                                                "propertyStorage": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "dynamicPropertyStorage": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "mediaPropertyStorage": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "dynamicMediaPropertyStorage": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "property": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "dynamicProperty": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "children": [],
+                                                "id": "column2",
+                                                "type": "column"
+                                            }
+                                        },
+                                        {
+                                            "dataType": "VisualModel",
+                                            "value": {
+                                                "propertyStorage": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "dynamicPropertyStorage": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "mediaPropertyStorage": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "dynamicMediaPropertyStorage": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "property": {
+                                                    "dataType": "Map",
+                                                    "value": {
+                                                        "width": "100%",
+                                                        "height": "1333.34px",
+                                                        "scrollable": "Vertical",
+                                                        "scroll-bar": "Auto",
+                                                        "edge-effect-scroll": "None"
+                                                    }
+                                                },
+                                                "dynamicProperty": {
+                                                    "dataType": "Map",
+                                                    "value": {}
+                                                },
+                                                "children": [],
+                                                "id": "scroll1",
+                                                "type": "scroll"
+                                            }
+                                        }
+                                    ],
+                                    "id": "navigation3",
+                                    "type": "navigation"
+                                }
+                            },
+                            {
+                                "dataType": "VisualModel",
+                                "value": {
+                                    "propertyStorage": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "dynamicPropertyStorage": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "mediaPropertyStorage": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "dynamicMediaPropertyStorage": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "slots": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "property": {
+                                        "dataType": "Map",
+                                        "value": {
+                                            "height": "100%",
+                                            "width": "100%",
+                                            "titleMode": "Free",
+                                            "navigation-title": "发布"
+                                        }
+                                    },
+                                    "dynamicProperty": {
+                                        "dataType": "Map",
+                                        "value": {}
+                                    },
+                                    "children": [],
+                                    "id": "navigation1",
+                                    "type": "navigation"
+                                }
+                            }
+                        ],
+                        "id": "column1",
+                        "type": "column"
+                    }
+                }
+            ],
+            "id": "wrapper",
+            "type": "column"
+        }
+    },
+    "formData": {
+        "data": {
+            "dataType": "Map",
+            "value": {}
+        },
+        "actions": {
+            "dataType": "Map",
+            "value": {}
+        }
+    },
+    "customData": {
+        "property": {
+            "dataType": "Map",
+            "value": {}
+        },
+        "event": {
+            "dataType": "Map",
+            "value": {}
+        }
+    }
+}

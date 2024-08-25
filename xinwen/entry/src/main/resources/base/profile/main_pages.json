@@ -1,0 +1,11 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Login",
+    "pages/Register",
+    "pages/SearchNews",
+    "pages/SetUp",
+    "pages/NewsDetail",
+    "pages/Editor"
+  ]
+}

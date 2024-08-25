@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!--namespace:名称空间（用于为SQL语句的命名）-->
+<mapper namespace="com.zcxy.mapper.UserMapper">
+<!--    <select id="selectAll" resultType="com.zcxy.pojo.User">-->
+<!--        select *  from User;-->
+<!--    </select>-->
+    <select id="selectByUid" resultType="com.zcxy.pojo.User">
+        <!--此SQL语句的id：test.selectById-->
+        select *  from User where uid = #{id};
+    </select>
+    <select id="selectByAccount" resultType="com.zcxy.pojo.User">
+        <!--此SQL语句的id：test.selectById-->
+        select *  from User where account = #{id};
+    </select>
+    <select id="selectByPhone" resultType="com.zcxy.pojo.User">
+        <!--此SQL语句的id：test.selectById-->
+        select *  from User where phone = #{id};
+    </select>
+    <insert id="addUser" parameterType="com.zcxy.pojo.User">
+        insert into User(uid, account, password, phone, email, avatar, role, sex,head)
+        values (#{uid}, #{account}, #{password}, #{phone}, #{email}, #{avatar}, #{role}, #{sex},#{head})
+    </insert>
+    <update id="updateUser" parameterType="com.zcxy.pojo.User">
+            update User set account = #{account}, password = #{password},
+                            phone = #{phone}, email = #{email}, avatar = #{avatar},
+                            role = #{role}, sex = #{sex},head=#{head} where uid = #{uid};
+    </update>
+    <delete id="deleteByUids">
+        delete from User where uid
+        in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+        ;
+    </delete>
+    <delete id="deleteByAccounts">
+        delete from User where account
+        in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+        ;
+    </delete>
+    <delete id="deleteByPhones">
+        delete from User where phone
+        in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+        ;
+    </delete>
+</mapper>
